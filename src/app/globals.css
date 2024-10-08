@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -14,14 +15,164 @@
   }
 }
 
+.container {
+  max-width: 77.5em;
+  margin: 0 auto;
+  /* padding: 1em; */
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.sec_padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+font-family: "Quicksand", system-ui;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .regular-48{
+    @apply leading-[120%] text-6xl font-[400]    text-Primary
+  }
+  .medium-48{
+    @apply leading-[120%] text-6xl font-[500]    text-Primary
+  }
+  .semibold-48{
+     @apply leading-[120%] text-6xl font-[600] text-Primary
+  }
+  .bold-48{
+     @apply leading-[120%] text-6xl font-[700]   text-Primary
+  }
+
+  .regular-40{
+    @apply text-5xl font-[400] leading-[120%]    text-Primary
+  }
+  .medium-40{
+     @apply text-5xl font-[500] leading-[120%]    text-Primary
+  }
+  .semibold-40{
+     @apply text-5xl font-[600] leading-[120%]    text-Primary
+  }
+  .bold-40{
+   @apply text-5xl font-[700] leading-[120%]       text-Primary
+  }
+  .Regular-32{
+    @apply text-4xl font-[400] leading-[120%] text-Primary
+  }
+  .Medium-32{
+    @apply text-4xl font-[500] leading-[120%]  text-Primary
+  }
+  .Semibold-32{
+    @apply text-4xl font-[600] leading-[120%]  text-Primary
+  }
+  .bold-32{
+    @apply text-4xl font-[700] leading-[120%]  text-Primary
+  }
+  .regular-28{
+   @apply text-3xl font-[400] leading-[120%]     text-TextColor 
+  }
+  .medium-28{
+     @apply text-3xl font-[500] leading-[120%]    text-TextColor 
+  }
+  .semibold-28{
+     @apply text-3xl font-[600] leading-[120%]     text-TextColor 
+  }
+  .bold-28{
+     @apply text-3xl font-[700] leading-[120%]      text-TextColor 
+  }
+  .regular-24{
+    @apply text-2xl font-[400] leading-[120%]      text-TextColor 
+  }
+  .medium-24{
+     @apply text-2xl font-[500] leading-[120%]      text-TextColor 
+  }
+  .semibold-24{
+     @apply text-2xl font-[600] leading-[120%]       text-textColor1
+  }
+  .bold-24{
+     @apply text-2xl font-[700] leading-[120%]     text-textColor1
+  }
+  .regular-20{
+    @apply text-xl font-[400] leading-[120%]       text-textColor1
+  }
+  .medium-20{
+    @apply text-xl font-[500] leading-[120%]     text-textColor1
+  }
+  .semibold-20{
+    @apply text-xl font-[600] leading-[120%]   text-textColor1
+  }
+  .bold-20{
+     @apply text-xl font-[700] leading-[120%]   text-textColor1
+  }
+  .regular-18{
+    @apply text-lg font-[400] leading-[145%]   text-textColor1
+  }
+ .medium-18{
+  @apply text-lg font-[500] leading-[145%]    text-textColor2
+ }
+ .semibold-18{
+  @apply text-lg font-[600] leading-[145%]     text-textColor2
+ }
+ .regular-16{
+  @apply text-base font-[400] leading-[145%]    text-textColor2
+ }
+ .medium-16{
+  @apply text-base font-[500] leading-[145%]    text-textColor1
+ }
+ .semibold-16{
+  @apply text-base font-[600] leading-[145%]   text-scondaryColor
+ }
+ .regular-14{
+  @apply text-sm font-[400] leading-[145%]    text-scondaryColor
+ }
+ .medium-14{
+  @apply text-sm font-[500] leading-[145%]    text-scondaryColor
+ }
+ .semibold-14{
+  @apply text-sm font-[600] leading-[145%]    text-scondaryColor
+ }
+ .regular-12{
+  @apply text-xs font-[400] leading-[145%]    text-scondaryColor
+ }
+ .medium-12{
+  @apply text-xs font-[500] leading-[145%]    text-scondaryColor
+ }
+ .semibold-12{
+  @apply text-xs font-[600] leading-[145%]   text-scondaryColor
+ }
 }
+
+
+.checkmark[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #28a745;
+  border-radius: 4px; 
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+.checkmark[type="checkbox"]:checked {
+  border-color: #28a745; 
+  background-color: #28a745; 
+}
+
+.checkmark[type="checkbox"]:checked::after {
+  content: '✔';
+  color: white;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  line-height: 18px;
+}
+
+/* @media(min-width:) */
