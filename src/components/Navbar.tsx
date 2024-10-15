@@ -1,8 +1,29 @@
 "use client";
 import React, { useState } from "react";
-import { Managment } from '@/app/page';
 import Link from "next/link";
+import LocationIcon from "@/icon/LocationIcon";
+import PhoneIcon from "@/icon/PhoneIcon";
+import ClockIcon from "@/icon/ClockIcon";
+import FacebookIcon from "@/icon/FacebookIcon";
+import LinkdinIcon from "@/icon/LinkdinIcon";
+import InstragramIcon from "@/icon/InstragramIcon";
+import Button from "./Button";
+const tobar = [
+    {
+        icon: <ClockIcon />,
+        title: 'Our Opening Hours Mon- Fri'
+    },
+    {
+        icon: <PhoneIcon />,
+        title: '+8801739402788'
+    },
+    {
+        icon: <LocationIcon />,
+        title: 'Paban Sadar, Bangladesh'
+    },
 
+]
+const socialIcon = [<FacebookIcon />, <LinkdinIcon />, <InstragramIcon />]
 const navLinks = [
     { href: '#', label: 'Home' },
     { href: '#', label: 'Courses' },
@@ -21,7 +42,7 @@ const Navbar = () => {
                 <div className="container md:flex flex-wrap  justify-between items-center py-4 space-y-2 sm:space-y-0">
                     {/* Left side - contact info */}
                     <div className="md:flex   md:space-x-4   semibold-16">
-                        {Managment.tobar.map((item: any, index: any) => (
+                        {tobar.map((item: any, index: any) => (
                             <div key={index} className="flex items-center gap-3 mt-[0.5em] md:mt-0 lg:mt-0 mdd:mt-0">
                                 {item.icon}
                                 <span className="lg:semibold-16 text-[12px] !text-textColor2 ">{item.title}</span>
@@ -38,7 +59,7 @@ const Navbar = () => {
 
                         {/* Social icons */}
                         <div className="flex space-x-2">
-                            {Managment.socialIcon.map((icon: any, index: any) => (
+                            {socialIcon.map((icon: any, index: any) => (
                                 <span key={index}>{icon}</span>
                             ))}
                         </div>
@@ -94,9 +115,11 @@ const Navbar = () => {
                     </div>
 
                     {/* Admit Now Button (Hidden on Mobile) */}
-                    <button className="hidden mdd:inline-block bg-Primary Semibold-20 !text-TextColor px-4 py-2 rounded-lg">
-                        Admit Now
-                    </button>
+
+                    <Button title="Admit Now"
+                        mainclass="hidden mdd:inline-block"
+
+                    />
                 </div>
 
                 {/* Sidebar Menu (Open on Mobile) */}
@@ -139,10 +162,9 @@ const Navbar = () => {
                                     {link.label}
                                 </Link>
                             ))}
-
-                            <button className="bg-Primary text-textColor1 Semibold-20 px-4 py-2 rounded-lg">
-                                Admit Now
-                            </button>
+                            <Button
+                                title="Admit Now"
+                            />
                         </div>
                     </div>
                 </div>

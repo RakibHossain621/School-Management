@@ -1,8 +1,8 @@
 import React from 'react';
-import { Managment } from '@/app/page';
+import { Footer as footer } from '@/app/page';
 
 const Footer = () => {
-    const { footer } = Managment;
+  
     return (
         <footer className="sec_padding bg-Primary mt-14">
             <div className="container">

@@ -1,20 +1,30 @@
+import MidTitle from '@/components/MidTitle';
 import React from 'react';
-import { Managment } from '@/app/page';
+interface teacherPrps{
+  teacher:{
+    title:string;
+    title1:string;
+    subtitle:string;
+    items:Array<{
+      img:string;
+      title:string;
+      subtitle:string;
+    }>
+  }
+  
 
-const OurTeacher = () => {
-  const { teacher } = Managment;
+}
+const OurTeacher = ({teacher}:teacherPrps) => {
 
   return (
     <section className='sec_padding'>
       <div className="container">
         <div className="flex justify-center flex-col items-center text-center">
-          <h1 className='bold-48 !text-TextColor '>
-            {teacher.title}
-            <span className='text-Primary'>{teacher.title1}</span>
-          </h1>
-          <p className='regular-20 !text-TextColor max-w-[728px] mt-3'>
-            {teacher.subtitle}
-          </p>
+           <MidTitle
+            title={teacher.title}
+            title1={teacher.title1}
+            subTitle={teacher.subtitle}
+           />
         </div>
 
        

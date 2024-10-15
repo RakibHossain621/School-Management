@@ -1,19 +1,34 @@
+import MidTitle from '@/components/MidTitle';
 import Image from 'next/image';
 import React from 'react';
-import { Managment } from '@/app/page';
-const WelcomePage = () => {
-    const {welcomeleft} = Managment
+interface welcomeleftProps{
+  welcomeleft:{
+    title:string; 
+    title1:string;
+    subtitle:string; 
+    item:Array<{
+      title:string 
+      icon:React.ReactNode;
+      subtitle:string;
+    }>
+    welcomeright:string;
+  }
+}
+const WelcomePage = ({welcomeleft}:welcomeleftProps) => {
+
   return (
     <section className="sec_padding">
       <div className="container ">
         <div className="wrapper flex flex-col lg:flex-row items-center justify-between space-y-10 lg:space-y-0 lg:space-x-10">
           {/* Left Section */}
           <div className="lg:w-2/3">
-            <h1 className="bold-48 !text-scondaryColor  mb-5">
-              {welcomeleft.title} <span className="text-Primary">{welcomeleft.title1}</span>
-            </h1>
-            <p className="Regular-20 text-scondaryColor max-w-[554px] mb-10">{welcomeleft.subtitle}</p>
-
+            <MidTitle
+             title={welcomeleft.title}
+             titleCN='!text-scondaryColor  mb-5'
+             title1={welcomeleft.title1}
+             subTitle={welcomeleft.subtitle}
+             subTitleCN='text-scondaryColor max-w-[554px] mb-10'
+            />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {welcomeleft.item.map((service, index) => (
                 <div key={index} className=" p-6 flex items-center space-x-4">

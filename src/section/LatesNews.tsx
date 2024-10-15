@@ -1,23 +1,35 @@
 import React from 'react';
 import Image from 'next/image';
-import { Managment } from '@/app/page';
 import RightArrowIcon from '@/icon/RightArrowIcon';
+import MidTitle from '@/components/MidTitle';
+interface latesNewsProps {
+    latesNews: {
+        title: string;
+        title1: string;
+        subtitle: string;
+        items: Array<{
+            img: string;
+            title: string;
+            date: string;
+            subtitle: String;
+            btn: string;
+        }>
+    }
 
-const LatesNews = () => {
-    const { latesNews } = Managment;
+}
+const LatesNews = ({ latesNews }: latesNewsProps) => {
 
     return (
         <section className="sec_padding">
             <div className="container">
 
                 <div className="text-center mb-8">
-                    <h1 className="bold-48 !text-TextColor">
-                        {latesNews.title}
-                        <span className="text-Primary">{latesNews.title1}</span>
-                    </h1>
-                    <p className="regular-20 max-w-[728px] mx-auto !text-TextColor">
-                        {latesNews.subtitle}
-                    </p>
+                    <MidTitle
+                        title={latesNews.title}
+                        title1={latesNews.title1}
+                        subTitle={latesNews.subtitle}
+                        subTitleCN='mx-auto'
+                    />
                 </div>
 
 

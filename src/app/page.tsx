@@ -4,7 +4,6 @@ import ActivityIcon from "@/icon/ActivityIcon";
 import AwardIcon from "@/icon/AwardIcon";
 import CampianIcon from "@/icon/CampianIcon";
 import CheckMarkIcon from "@/icon/CheckMarkIcon";
-import ClockIcon from "@/icon/ClockIcon";
 import CompletedIcon from "@/icon/CompletedIcon";
 import CourseIcon from "@/icon/CourseIcon";
 import ExpartCircleIcon from "@/icon/ExpartCircleIcon";
@@ -16,31 +15,17 @@ import InstragramIcon from "@/icon/InstragramIcon";
 import InstragramIcons from "@/icon/InstragramIcons";
 import LinkdinIcon from "@/icon/LinkdinIcon";
 import LinkdinIcons from "@/icon/LinkdinIcons";
-import LocationIcon from "@/icon/LocationIcon";
+
 import MusicIcon from "@/icon/MusicIcon";
 import ParrentCircleIcon from "@/icon/ParrentCircleIcon";
 import ParrentIcon from "@/icon/ParrentIcon";
-import PhoneIcon from "@/icon/PhoneIcon";
+
 import StudentIcon from "@/icon/StudentIcon";
 import TwitterIcon from "@/icon/TwitterIcon";
 
- export const Managment = {
-   tobar:[
-    {
-      icon: <ClockIcon/>,
-      title: 'Our Opening Hours Mon- Fri'
-    },
-    {
-      icon: <PhoneIcon/>,
-      title: '+8801739402788'
-    },
-    {
-      icon: <LocationIcon/>,
-      title: 'Paban Sadar, Bangladesh'
-    },
+  const Managment = {
    
-   ],
-   socialIcon:[<FacebookIcon/>,<LinkdinIcon/>,<InstragramIcon/>],
+   
    kidesleft:{
     subtitle: 'A New Approach to',
     title: 'Study Of Kids Child ',
@@ -395,8 +380,9 @@ import TwitterIcon from "@/icon/TwitterIcon";
       subtitle2: 'P: +8801713568786'
     }
   },
-  footer:{
-    title: 'About D.I.N.A',
+ }
+ export const Footer={
+     title: 'About D.I.N.A',
     subtitle: 'Monotne deplos copertve chanva andng crorate Qhanin Unique Qnderwhe Premum Convere With Uheng Mutmed CoverMonotne deplos copertve chanva andng crorate Qhanin Unique Qnderwhe Premum Convere With Uheng Mutmed Cover',
     socials:[<FacebookIcons/>,<InstragramIcons/>,<TwitterIcon/>,<LinkdinIcons/>],
     middel:{
@@ -410,7 +396,6 @@ import TwitterIcon from "@/icon/TwitterIcon";
       subtitle1: '4/5 Redlake Lane, Wokingham, Berkshire, RG40 3BF'
     }
   }
- }
  
   
  
@@ -419,7 +404,7 @@ export default function Home() {
 
   return (
     <>
-     <HomePage/>
+     <HomePage Managment={Managment}/>
     </>
   );
 }

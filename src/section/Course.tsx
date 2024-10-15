@@ -1,19 +1,33 @@
+import Button from '@/components/Button';
+import MidTitle from '@/components/MidTitle';
 import Image from 'next/image';
 import React from 'react';
-import { Managment } from '@/app/page';
+interface courseProps{
+  course:{
+    title:string;
+    title1:string;
+    subtitle:string;
+    item:Array<{
+      img:string;
+      button:string;
+      itemtitle:string;
+      itemsubtitle:string;
+    }>
+  }
+}
+const Course = ({course}:courseProps) => {
 
-const Course = () => {
-  const { course } = Managment;
 
   return (
     <section className="sec_padding">
       <div className="container">
        
         <div className="flex justify-center flex-col items-center text-center">
-          <h1 className="bold-48 !text-TextColor ">
-            {course.title} <span className="text-Primary">{course.title1}</span>
-          </h1>
-          <p className="regular-20 !text-TextColor max-w-[730px] mt-3">{course.subtitle}</p>
+          <MidTitle
+           title={course.title}
+           title1={course.title1}
+           subTitle={course.subtitle}
+          />
         </div>
 
         {/* Courses Grid */}
@@ -31,9 +45,10 @@ const Course = () => {
               
               {/* Course Info */}
               <div className="mt-4 px-8 pb-7">
-                <button className="bg-Primary !text-TextColor px-8 py-2 rounded-[10px] medium-16">
-                  {courseItem.button}
-                </button>
+               <Button
+                 title={courseItem.button}
+                 mainclass='px-8 py-2 rounded-[10px] medium-16'
+                />
                 <h3 className="mt-3 bold-24 !text-scondaryColor">{courseItem.itemtitle}</h3>
                 <p className="regular-16 !text-scondaryColor mt-2">{courseItem.itemsubtitle}</p>
               </div>

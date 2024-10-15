@@ -1,20 +1,29 @@
+import MidTitle from '@/components/MidTitle';
 import React from 'react';
-import { Managment } from '@/app/page';
+interface environmentProps{
+  environment:{
+    title:string;
+    title1:string;
+    subtitle:string;
+    items:Array<{
+      icon:React.ReactNode;
+      title:string;
+      subtitle:string;
 
-const Environment = () => {
-  const { environment } = Managment;
+    }>
+  }
+}
+const Environment = ({environment}:environmentProps) => {
 
   return (
     <section className='sec_padding'>
       <div className="container">
         <div className="flex justify-center flex-col items-center text-center">
-          <h1 className='bold-48 !text-TextColor '>
-            {environment.title}
-            <span className='text-Primary'>{environment.title1}</span>
-          </h1>
-          <p className='regular-20 max-w-[728px] mt-3 !text-TextColor'>
-            {environment.subtitle}
-          </p>
+           <MidTitle
+            title={environment.title}
+            title1={environment.title1}
+            subTitle={environment.subtitle}
+           />
         </div>
         <div className=' grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 mt-8'>
           {

@@ -11,20 +11,21 @@ import PeopleSays from './section/PeopleSays'
 import LatesNews from './section/LatesNews'
 import ContactUs from './section/ContactUs'
 
-const HomePage = () => {
+const HomePage = ({Managment}:{Managment:any}) => {
+  const {welcomeleft,says,kidesleft,aboutUs,course,latesNews,fecilities,teacher,environment,ImageGallery,contactUs} = Managment
   return (
     <div>
-     <Kides/>
-     <WelcomePage/>
-     <About/>
-     <Course/>
-     <Environment/>
-     <OurTeacher/>
-     <SchoolFecilities/>
-     <SchoolGallery/>
-     <PeopleSays/>
-     <LatesNews/>
-     <ContactUs/>
+     <Kides kidesleft={kidesleft}/>
+     <WelcomePage welcomeleft={welcomeleft}/>
+     <About aboutUs={aboutUs}/>
+     <Course course={course}/>
+     <Environment environment={environment}/>
+     <OurTeacher teacher={teacher}/>
+     <SchoolFecilities fecilities={fecilities}/>
+     <SchoolGallery ImageGallery={ImageGallery}/>
+     <PeopleSays says={says}/>
+     <LatesNews latesNews={latesNews}/>
+     <ContactUs contactUs={contactUs}/>
     </div>
   )
 }

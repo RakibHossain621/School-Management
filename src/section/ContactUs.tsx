@@ -1,19 +1,39 @@
 import React from 'react';
-import { Managment } from '@/app/page';
 import Image from 'next/image';
 import Link from 'next/link';
+import MidTitle from '@/components/MidTitle';
+interface contactUsProps {
+  contactUs: {
+    title: string;
+    title1: string;
+    inputitems: Array<{
+      label: string;
+      inputtext: string
+    }>
+    contactright: {
+      contant: string;
+      subtitle: string;
+      img: string;
+      title: string;
+      title1: string;
+      subtitile1: string;
+      subtitle2: string;
+    }
+  }
 
-const ContactUs = () => {
-  const { contactUs } = Managment;
+}
+const ContactUs = ({ contactUs }: contactUsProps) => {
+
 
   return (
     <section className="sec_padding">
       <div className="container">
         {/* Title */}
         <div className="text-center mb-8">
-          <h1 className="bold-48 !text-TextColor">
-            {contactUs.title} <span className="text-Primary">{contactUs.title1}</span>
-          </h1>
+          <MidTitle
+            title={contactUs.title}
+            title1={contactUs.title1}
+          />
         </div>
         <div className="wrapper md:flex gap-8 border border-[#00000033] p-7">
           {/* Left Form Section */}
@@ -42,20 +62,20 @@ const ContactUs = () => {
               </div>
 
               {/* Submit Button */}
-             <div>
-             <button className="bg-green-500 w-full !text-TextColor px-8 py-3 rounded-full hover:bg-green-600">
-                Send Message
-              </button>
+              <div>
+                <button className="bg-green-500 w-full !text-TextColor px-8 py-3 rounded-full hover:bg-green-600">
+                  Send Message
+                </button>
 
-             </div>
+              </div>
               {/* Checkbox */}
               <div className="flex md:items-center space-x-2">
-               <div>
-               <input type="checkbox" className=" checkmark outline-none border-none " />
-               </div>
+                <div>
+                  <input type="checkbox" className=" checkmark outline-none border-none " />
+                </div>
                 <p className="text-sm text-Primary mb-3 md:mb-0 lg:mb-0 lg:-mt-2">
                   By sending this message, you agree to the{' '}
-                  <Link href='#'  className="text-scondaryColor underline">
+                  <Link href='#' className="text-scondaryColor underline">
                     Terms of use
                   </Link> {'  '}
                   and {'   '}

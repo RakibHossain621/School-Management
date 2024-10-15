@@ -1,21 +1,28 @@
 import React from 'react'
-import { Managment } from '@/app/page';
 import Image from 'next/image';
-
-const SchoolGallery = () => {
-  const { ImageGallery } = Managment;
+import MidTitle from '@/components/MidTitle';
+interface ImageGalleryProps {
+  ImageGallery: {
+    title: string;
+    title1: string;
+    subtitle: string;
+    imageurl: Array<{
+      id: number;
+      img: string;
+    }>
+  }
+}
+const SchoolGallery = ({ ImageGallery }: ImageGalleryProps) => {
 
   return (
     <section className='sec_padding'>
       <div className="container">
         <div className="flex justify-center flex-col items-center text-center">
-          <h1 className='bold-48 !text-TextColor'>
-            {ImageGallery.title}
-            <span className='text-Primary'>{ImageGallery.title1}</span>
-          </h1>
-          <p className='regular-20 max-w-[728px] mt-3 !text-textColor1'>
-            {ImageGallery.subtitle}
-          </p>
+          <MidTitle
+            title={ImageGallery.title}
+            title1={ImageGallery.title1}
+            subTitle={ImageGallery.subtitle}
+          />
         </div>
 
         {/* Gallery Section */}
@@ -27,7 +34,7 @@ const SchoolGallery = () => {
               alt={`Gallery Image ${image.id}`}
               width={395}
               height={250}
-              className={`object-cover w-full h-auto ${image.id === 1 || image.id === 6 ? 'md:col-span-2' : ''}  ${image.id ===5 ? 'md:row-span-2 h-full' : ''}`}
+              className={`object-cover w-full h-auto ${image.id === 1 || image.id === 6 ? 'md:col-span-2' : ''}  ${image.id === 5 ? 'md:row-span-2 h-full' : ''}`}
             />
 
           ))}
